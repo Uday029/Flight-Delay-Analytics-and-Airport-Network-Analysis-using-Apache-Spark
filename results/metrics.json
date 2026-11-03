@@ -1,0 +1,415 @@
+{
+  "raw_rows": 3000000,
+  "clean_rows": 2999586,
+  "removed_rows": 414,
+  "date_first": "2001-01-01 00:01:00",
+  "date_last": "2001-07-01 00:00:00",
+  "raw_min_delay": -1116,
+  "raw_max_delay": 1688,
+  "partitions_df": 4,
+  "mean_delay": 6.5903808058845454,
+  "sd_delay": 31.11152485016705,
+  "pct_delayed15": 0.19962188115293245,
+  "pct_late": 0.44752975910675674,
+  "avg_distance": 731.5257912258559,
+  "q25": -9.0,
+  "median": -1.0,
+  "q75": 11.0,
+  "q90": 35.0,
+  "q99": 141.0,
+  "airports_n": 229,
+  "routes_n": 3399,
+  "rdd_count": 2999586,
+  "rdd_total_distance": 2194274522,
+  "rdd_delayed15": 598783,
+  "rdd_top_routes": [
+    [
+      "LAX-LAS",
+      8323
+    ],
+    [
+      "LAS-LAX",
+      8108
+    ],
+    [
+      "PHX-LAX",
+      7717
+    ],
+    [
+      "LAX-PHX",
+      7462
+    ],
+    [
+      "LAX-SAN",
+      6670
+    ]
+  ],
+  "acc_late": 598783,
+  "acc_big": 13890,
+  "rdd_by_state": [
+    [
+      "CA",
+      370220
+    ],
+    [
+      "TX",
+      355891
+    ],
+    [
+      "FL",
+      202088
+    ],
+    [
+      "IL",
+      194286
+    ],
+    [
+      "NY",
+      134018
+    ]
+  ],
+  "t_rdd_count": 9.44,
+  "t_rdd_reduce": 13.01,
+  "t_rdd_filter": 8.9,
+  "t_rdd_reducebykey": 9.33,
+  "cache_benchmark": {
+    "rows": 1019603,
+    "no_cache": [
+      3.37,
+      4.06,
+      5.26,
+      4.81
+    ],
+    "with_cache": [
+      4.3,
+      1.21,
+      1.07,
+      0.96
+    ]
+  },
+  "stream": {
+    "micro_batches": 10,
+    "rows_per_batch": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+    ],
+    "top": [
+      {
+        "origin": "ORD",
+        "flights": 10966,
+        "avg_delay": 8.23
+      },
+      {
+        "origin": "DFW",
+        "flights": 10452,
+        "avg_delay": 7.1
+      },
+      {
+        "origin": "ATL",
+        "flights": 8170,
+        "avg_delay": 7.32
+      },
+      {
+        "origin": "LAX",
+        "flights": 7636,
+        "avg_delay": 7.44
+      },
+      {
+        "origin": "PHX",
+        "flights": 6162,
+        "avg_delay": 9.9
+      }
+    ]
+  },
+  "feature_names": [
+    "hour",
+    "dom",
+    "month",
+    "distance",
+    "log_distance",
+    "origin_flights",
+    "dest_flights",
+    "band_short",
+    "band_medium",
+    "dow_Sun",
+    "dow_Mon",
+    "dow_Tue",
+    "dow_Wed",
+    "dow_Thu",
+    "dow_Fri"
+  ],
+  "n_train": 480282,
+  "n_test": 120052,
+  "sample_frac": 0.2,
+  "corr_with_delay": {
+    "distance": -0.0145,
+    "hour": 0.1623,
+    "dow": 0.0255,
+    "dom": -0.0059,
+    "month": -0.0101,
+    "origin_flights": 0.0316,
+    "dest_flights": 0.0016
+  },
+  "linreg_coef": {
+    "hour": 4.9232,
+    "dom": -0.1622,
+    "month": -0.2356,
+    "distance": -0.3624,
+    "log_distance": 0.0544,
+    "origin_flights": 0.8561,
+    "dest_flights": 0.7625,
+    "band_short": 0.3676,
+    "band_medium": 0.597,
+    "dow_Sun": 0.2998,
+    "dow_Mon": 0.4785,
+    "dow_Tue": 0.2611,
+    "dow_Wed": 0.7781,
+    "dow_Thu": 1.5634,
+    "dow_Fri": 2.4728
+  },
+  "dt_top_features": [
+    [
+      "hour",
+      0.5546
+    ],
+    [
+      "origin_flights",
+      0.1542
+    ],
+    [
+      "distance",
+      0.109
+    ],
+    [
+      "dest_flights",
+      0.0452
+    ],
+    [
+      "dom",
+      0.0394
+    ]
+  ],
+  "regression": {
+    "Baseline (mean)": {
+      "rmse": 30.839140160736516,
+      "mae": 18.451622561264365,
+      "r2": 0.0,
+      "train_time": 0.0
+    },
+    "Linear Regression": {
+      "rmse": 30.345317219373417,
+      "mae": 18.187454234149858,
+      "r2": 0.03176916552347386,
+      "train_time": 2.19
+    },
+    "Decision Tree Regressor": {
+      "rmse": 29.640168430666048,
+      "mae": 17.885732293020215,
+      "r2": 0.07624483448483399,
+      "train_time": 2.76
+    }
+  },
+  "class_weight": 4.003198083233502,
+  "classification": {
+    "Logistic Regression (no weights)": {
+      "accuracy": 0.799386932329324,
+      "precision": 0.36363636363636365,
+      "recall": 0.00016610605871849175,
+      "f1": 0.00033206043499916984,
+      "auc": 0.6320764239003063,
+      "train_time": 4.48
+    },
+    "Logistic Regression": {
+      "accuracy": 0.592376636790724,
+      "precision": 0.26852800387416415,
+      "recall": 0.598687762136124,
+      "f1": 0.3707599331361707,
+      "auc": 0.6323872961895558,
+      "train_time": 4.83
+    },
+    "Decision Tree": {
+      "accuracy": 0.5917435777829607,
+      "precision": 0.2710105259290556,
+      "recall": 0.6126406710684772,
+      "f1": 0.37578644387274257,
+      "auc": 0.5198498334662837,
+      "train_time": 2.73
+    },
+    "SVM (LinearSVC)": {
+      "accuracy": 0.5836554159864059,
+      "precision": 0.26536343213276326,
+      "recall": 0.6082388605124371,
+      "f1": 0.36951448717787,
+      "auc": 0.6305658978483194,
+      "train_time": 18.38
+    },
+    "Naive Bayes": {
+      "accuracy": 0.5990404158198114,
+      "precision": 0.2384018096004524,
+      "recall": 0.45517212740334706,
+      "f1": 0.3129121584972452,
+      "auc": 0.45826454058855853,
+      "train_time": 2.8
+    }
+  },
+  "confusion": {
+    "Logistic Regression (no weights)": [
+      [
+        95964,
+        7
+      ],
+      [
+        24077,
+        4
+      ]
+    ],
+    "Logistic Regression": [
+      [
+        56699,
+        39272
+      ],
+      [
+        9664,
+        14417
+      ]
+    ],
+    "Decision Tree": [
+      [
+        56287,
+        39684
+      ],
+      [
+        9328,
+        14753
+      ]
+    ],
+    "SVM (LinearSVC)": [
+      [
+        55422,
+        40549
+      ],
+      [
+        9434,
+        14647
+      ]
+    ],
+    "Naive Bayes": [
+      [
+        60955,
+        35016
+      ],
+      [
+        13120,
+        10961
+      ]
+    ]
+  },
+  "test_pos_rate": 0.20058807849931695,
+  "majority_accuracy": 0.7994119215006831,
+  "kmeans": {
+    "silhouette": {
+      "2": 0.5025,
+      "3": 0.4244,
+      "4": 0.5209,
+      "5": 0.4809,
+      "6": 0.4614,
+      "7": 0.4125,
+      "8": 0.3505
+    },
+    "cost": {
+      "2": 372.956,
+      "3": 285.892,
+      "4": 195.493,
+      "5": 157.463,
+      "6": 148.585,
+      "7": 134.081,
+      "8": 128.476
+    },
+    "k": 4,
+    "profile": [
+      {
+        "cluster": 0,
+        "airports": 19,
+        "flights": 2422.842,
+        "avg_delay": 9.827,
+        "avg_distance": 337.713,
+        "pct_delayed": 0.233
+      },
+      {
+        "cluster": 1,
+        "airports": 38,
+        "flights": 1955.184,
+        "avg_delay": 2.533,
+        "avg_distance": 253.419,
+        "pct_delayed": 0.122
+      },
+      {
+        "cluster": 2,
+        "airports": 34,
+        "flights": 57293.618,
+        "avg_delay": 7.409,
+        "avg_distance": 885.647,
+        "pct_delayed": 0.213
+      },
+      {
+        "cluster": 3,
+        "airports": 65,
+        "flights": 13723.077,
+        "avg_delay": 5.039,
+        "avg_distance": 519.447,
+        "pct_delayed": 0.163
+      }
+    ],
+    "members": {
+      "0": [
+        "ROC",
+        "PSP",
+        "PWM",
+        "HPN",
+        "SBA",
+        "XNA",
+        "BTV",
+        "JNU"
+      ],
+      "1": [
+        "LIH",
+        "MDT",
+        "CID",
+        "CHS",
+        "MSN",
+        "AMA",
+        "HSV",
+        "TYS"
+      ],
+      "2": [
+        "ORD",
+        "DFW",
+        "ATL",
+        "LAX",
+        "PHX",
+        "STL",
+        "DTW",
+        "MSP"
+      ],
+      "3": [
+        "CLT",
+        "PIT",
+        "DCA",
+        "CVG",
+        "MCI",
+        "HOU",
+        "MEM",
+        "BNA"
+      ]
+    }
+  },
+  "total_runtime_s": 265.8
+}
